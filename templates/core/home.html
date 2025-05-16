@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold mb-4">Posts</h1>
+    <ul>
+        {% for post in posts %}
+        <li class="mb-2">
+            <button
+                class="text-blue-600 underline"
+                hx-get="{% url 'post_detail' post.pk %}"
+                hx-target="#post-detail"
+                hx-swap="innerHTML">
+                {{ post.title }}
+            </button>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div id="post-detail" class="mt-6 p-4 bg-white rounded shadow"></div>
+{% endblock %}

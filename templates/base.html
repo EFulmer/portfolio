@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}My Portfolio{% endblock %}</title>
+        <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray 100 text-gray 900 p-6">
+        <nav class="mb-8 space-x-4">
+            <a href="{% url 'home' %}" class="text-blue-500">Home</a>
+            <a href="{% url 'about' %}" class="text-blue-500">About</a>
+        </nav>
+        <div class="container mx-auto">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
