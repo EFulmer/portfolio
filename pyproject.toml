@@ -1,0 +1,19 @@
+[project]
+name = "portfolio"
+version = "1.0.0"
+description = "Personal portfolio site."
+authors = [
+    {name = "Eric R. Fulmer",email = "2952996+EFulmer@users.noreply.github.com"}
+]
+license = {text = "AGPL-3.0"}
+readme = "README.md"
+requires-python = "3.13.3"
+dependencies = [
+    "django (==4.2)",
+    "gunicorn (>=23.0.0,<24.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
