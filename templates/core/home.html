@@ -2,20 +2,25 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1 class="text-3xl font-bold mb-4">Posts</h1>
-    <ul>
+    <h1 class="text-3xl font-bold mb-4">Blog Posts</h1>
+    {% if posts %}
+    <ul class="space-y-4">
         {% for post in posts %}
-        <li class="mb-2">
-            <button
-                class="text-blue-600 underline"
-                hx-get="{% url 'post_detail' post.pk %}"
-                hx-target="#post-detail"
-                hx-swap="innerHTML">
-                {{ post.title }}
-            </button>
-        </li>
+        <li class="border-p pb-4">
+            <h2 class="text-xl font-semibold">
+                <a href="{% url 'post_detail' slug=post.slug %}" class="text-blue-600 hover:underline">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <p class="text-gray-500 text-sm">{{ post.created_at|date:"F j, Y" }}</p>
+            <p class="mt-2 text-gray-800">
+                {{ post.content|truncatechars:200 }}
+            </p>
         {% endfor %}
     </ul>
+    {% else %}
+        <p>No posts yet. Stay tuned!</p>
+    {% endif %}
 
     <div id="post-detail" class="mt-6 p-4 bg-white rounded shadow"></div>
 {% endblock %}
