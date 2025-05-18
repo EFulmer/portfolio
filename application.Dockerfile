@@ -13,7 +13,4 @@ RUN pip install --upgrade pip && \
 
 COPY . .
 
-# Collect static files at build time if needed
-RUN python manage.py collectstatic --noinput
-
-CMD ["bash", "./entrypoint.sh", "gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["bash", "./entrypoint.sh"]
