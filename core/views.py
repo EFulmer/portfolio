@@ -14,3 +14,6 @@ def post_detail(request, slug):
 
 def about(request):
     return render(request, 'core/about.html')
+
+def todo(request):
+    return render(request, 'core/todo.html')

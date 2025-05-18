@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}To-Dos{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">To-Do List</h1>
+
+<p class="mb-4">There are always improvements I can make to this site, be they security, presentation, or anything else. I like the idea of publishing a list of them on this very same site, and so I'm doing it.</p>
+
+<div class="py-6">
+  <h2 class="text-2xl font-semibold mb-4">Some Desired Improvements</h2>
+  <ul class="list-disc list-inside space-y-2 text-gray-800">
+    <li>Install and set up automated formatting tools, for Python, HTML, <em>and</em> SQL.</li>
+    <li>Tests.</li>
+    <li>Continuous deployment.</li>
+    <li>List all prerequisites/security requirements for a "prod" deployment.</li>
+    <li>In accordance with the above, set up a Chef or Ansible script for ease of deployment.</li>
+    <li>Commenting system!</li>
+    <li>A "tech stack" page where I outline. This'll change as I change the technologies I use.</li>
+  </ul>
+</div>
+{% endblock %}
