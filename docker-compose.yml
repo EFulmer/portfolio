@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    container_name: blog-db
+    env_file:
+      - env.list
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - blog-net
+  web:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    container_name: blog-web
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - env.list
+    networks:
+      - blog-net
+
+volumes:
+  postgres_data:
+
+networks:
+  blog-net:
