@@ -8,5 +8,5 @@ build-docker:
 run-local-dev:
 	poetry run python manage.py runserver
 
-run-docker:
-	docker run --name=portfolioapp -p=127:0.0.1:8001:8000 --env-file=env.list $(DOCKER_IMAGE_NAME)
+run-docker-dev:
+	docker-compose -f docker-compose.yml -f docker-compose-dev.yml up

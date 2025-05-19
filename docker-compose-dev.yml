@@ -1,0 +1,10 @@
+services:
+  web:
+    ports:
+      - "8000:8000"
+    command: >
+      python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app   # Mount full project for live code reloading
+    environment:
+      - DEBUG=True
