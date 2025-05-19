@@ -175,3 +175,9 @@ cython_debug/
 
 # Environment variables for deployment
 env.list
+
+# Certificates
+certbot/*
+
+# Django static files
+staticfiles/*

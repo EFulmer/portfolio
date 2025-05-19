@@ -123,10 +123,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIR = [BASE_DIR / 'templates']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CSRF:
+CSRF_TRUSTED_ORIGINS = [
+    "https://ericfulmer.tech",
+    "https://www.ericfulmer.tech",
+]
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
