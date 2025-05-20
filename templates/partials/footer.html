@@ -1,0 +1,13 @@
+{% load tz %}
+{% timezone "America/New_York" %}
+<footer class="bg-gray-100 text-gray-600 text-sm mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <!-- TODO: on 1 January 2026, change the copyright to 2025 - {% now "Y" %} -->
+        <p>&copy; {% now "Y" %} Eric R. Fulmer. All rights reserved.</p>
+        <div class="space-x-4">
+            <a href="https://github.com/efulmer" class="hover:text-black">GitHub</a>
+            <a href="https://www.linkedin.com/in/efulmer/">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+{% endtimezone %}
