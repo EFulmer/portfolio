@@ -181,3 +181,6 @@ certbot/*
 
 # Django static files
 staticfiles/*
+
+# macOS system files
+.DS_Store

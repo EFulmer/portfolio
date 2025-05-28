@@ -132,10 +132,20 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CSRF:
-CSRF_TRUSTED_ORIGINS = [
-    "https://ericfulmer.tech",
-    "https://www.ericfulmer.tech",
-]
+if bool(os.getenv("LOCAL")):
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+    CSRF_TRUSTED_ORIGINS = [
+        "http://localhost:8000",
+        "http://0.0.0.0:8000",
+        "http://127.0.0.1:8000",
+    ]
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+
+else:
+    CSRF_TRUSTED_ORIGINS = [
+        "https://ericfulmer.tech",
+        "https://www.ericfulmer.tech",
+    ]
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True

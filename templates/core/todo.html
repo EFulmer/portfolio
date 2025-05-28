@@ -3,22 +3,24 @@
 {% block title %}To-Dos{% endblock %}
 
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold mb-4">To-Do List</h1>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg">
+        <article class="prose prose-lg max-w-none text-gray-900 dark:text-gray-100 mt-8">
+            <h1 class="text-3xl font-bold mb-4">To-Do List</h1>
 
-    <p class="text-gray-700 leading-relaxed mb-4">There are always improvements I can make to this site, be they security, presentation, or anything else. I like the idea of publishing a list of them on this very same site, and so I'm doing it.</p>
+            <p class="text-gray-700 leading-relaxed mb-4">There are always improvements I can make to this site, be they security, presentation, or anything else. I like the idea of publishing a list of them on this very same site, and so I'm doing it.</p>
 
-    <div class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4 text-gray-800">Some Desired Improvements</h2>
-      <ul class="list-disc list-inside space-y-3 text-gray-800 leading-relaxed">
-        <li>Install and set up automated formatting tools, for Python, HTML, <em>and</em> SQL.</li>
-        <li>Tests.</li>
-        <li>Continuous deployment.</li>
-        <li>List all prerequisites/security requirements for a "prod" deployment.</li>
-        <li>In accordance with the above, set up a Chef or Ansible script for ease of deployment.</li>
-        <li>Commenting system!</li>
-        <li>A "tech stack" page where I outline the technologies I use and my reasoning for choosing each. This'll change as I change the technologies I use.</li>
-      </ul>
+            <div class="mb-12">
+              <h2 class="text-2xl font-semibold mb-4 text-gray-800">Some Desired Improvements</h2>
+              <ul class="list-disc list-inside space-y-3 text-gray-800 leading-relaxed">
+                <li>Install and set up automated formatting tools, for Python, HTML, <em>and</em> SQL.</li>
+                <li>Tests.</li>
+                <li>Continuous deployment.</li>
+                <li>List all prerequisites/security requirements for a "prod" deployment.</li>
+                <li>In accordance with the above, set up a Chef or Ansible script for ease of deployment.</li>
+                <li>Commenting system!</li>
+                <li>A "tech stack" page where I outline the technologies I use and my reasoning for choosing each. This'll change as I change the technologies I use.</li>
+              </ul>
+            </div>
+        </article>
     </div>
-</div>
 {% endblock %}
