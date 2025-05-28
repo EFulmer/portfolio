@@ -5,15 +5,28 @@
         <title>{% block title %}Eric R. Fulmer{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% load static %}
-        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+        <!-- NOTE: Tailwind Typography Plugin must be configured BEFORE loading Tailwind -->
+        <script>
+            tailwind.config = {
+                plugins: [tailwindTypography]
+            }
+        </script>
+        <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+        <!-- HTMX -->
         <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Custom Styles -->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
     </head>
     <body class="flex flex-col min-h-screen">
         {% include 'partials/header.html' %}
+
         <main class="flex-1 container mx-auto px-4 py-8">
             {% block content %}{% endblock %}
-        </div>
+        </main>
+
         {% include 'partials/footer.html' %}
     </body>
 </html>

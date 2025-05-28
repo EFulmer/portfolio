@@ -2,7 +2,7 @@ DOCKER_IMAGE_NAME=portfolio-app
 
 # Build-related commands:
 build-docker:
-	docker build --file application.Dockerfile --tag $(DOCKER_IMAGE_NAME) .
+	docker build --no-cache --file application.Dockerfile --tag $(DOCKER_IMAGE_NAME) .
 
 # Run-related commands:
 run-local-dev:
