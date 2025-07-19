@@ -14,5 +14,5 @@ run-docker-dev:
 run-docker-prod:
 	docker-compose -f docker-compose.yml -f docker-compose-prod.yml up --build
 
-stop-docker-prod: 
+stop-docker-prod:
 	docker-compose -f docker-compose.yml -f docker-compose-prod.yml down
