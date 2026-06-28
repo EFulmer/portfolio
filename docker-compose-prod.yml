@@ -7,11 +7,14 @@ services:
       - media_volume:/app/media
       - ./certbot/www:/var/www/certbot
       - ./certbot/conf:/etc/letsencrypt
+      - ./nginx-reload.sh:/usr/local/bin/nginx-reload.sh
     ports:
       - "80:80"
       - "443:443"
     depends_on:
       - web
+    restart: unless-stopped
+    entrypoint: /usr/local/bin/nginx-reload.sh
 
   certbot:
     image: certbot/certbot
@@ -22,3 +25,4 @@ services:
     entrypoint: /usr/local/bin/certbot-renew.sh
     depends_on:
       - nginx
+    restart: unless-stopped
